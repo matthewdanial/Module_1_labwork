@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice roller!</title>
+</head>
+
+<body>
+    <label for="diceSelect">Select your die</label>
+
+    <select id="diceSelect">
+        <option value="6">D6</option>
+        <option value="10">D10</option>
+    </select>
+
+    <button id="rollButton">Roll Die</button>
+
+    <p id="result">Result: </p>
+
+    <script>
+        function rollDie(sides) {
+            return Math.floor(Math.random() * sides) + 1;
+        }
+
+        const rollButton = document.getElementById('rollButton');
+        const diceSelect = document.getElementById('diceSelect');
+        const resultext = document.getElementById('result');
+
+        rollButton.addEventListener("click", function () {
+            const sides = diceSelect.value;
+            const roll = rollDie(sides);
+            resultext.textContent = "Result: " + roll;
+        });
+
+        console.log(rollDie(6) >= 1 && rollDie(6) <= 6);   // should log true
+        console.log(rollDie(10) >= 1 && rollDie(10) <= 10); // should log true
+        console.log(Number.isInteger(rollDie(6)));            // should log true
+    </script>
+</body>
+
+</html>
+
+<!-- User Stories:
+ 1. As a user, I want to select my die from a dropdown menu so that I can choose between different types of dice (D6, D10).
+ 2. As a user, I want to click a "roll", so that I can a radom number between 1 and the number of sides on the die I selected.
+ 3. As a user, I want to be able to see the result of my roll displayed clearly, so I can see the number that has been rolled
+ 4. As a user, I want each roll to be random, so each roll/outcome feels fair
+ 5. As a user, I want to be able to roll again after seeing a result, So I can roll continouesly without needed to reload the page.
+-->
+
+<!-- Story Board
+ 
+
+
+
+
+-->

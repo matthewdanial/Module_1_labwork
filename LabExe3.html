@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-
+width, initial-scale=1.0">
+
+    <title>Module 1 Exercise 3</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            min-height:
+                100vh;
+            align-items: stretch;
+        }
+
+        .column {
+            background: goldenrod;
+            display:
+                flex;
+            flex-direction: column;
+            justify-content:
+                center;
+            align-items: center;
+            flex: 1;
+
+            .change-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: rgb(193, 22, 136);
+                color: yellow;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column" id="column1">
+            <img src="https://bluemoji.io/cdn-proxy/646218c67da47160c64a84d5/66b3e5d0c2ab246786ca1d5e_86.png"
+                alt="SMILEY icon2">
+            <h1 id="heading1">Hello</h1>
+            <button class="change-btn" onclick="changeColumn1()">Change Me</button>
+        </div>
+        <div class="column" id="column2">
+            <img src="https://bluemoji.io/cdn-proxy/646218c67da47160c64a84d5/66b3e5d0c2ab246786ca1d5e_86.png"
+                alt="SMILEY icon">
+            <h1 id="heading2">World</h1>
+            <button class="change-btn" onclick="changeColumn2()">Change Me</button>
+        </div>
+    </div>
+    <script>
+        function changeColumn1() {
+            const column = document.getElementById("column1");
+            const heading = document.getElementById("heading1");
+            column.style.backgroundColor = "olive";
+            heading.textContent = "Changed!";
+        }
+
+        function changeColumn2() {
+            const column = document.getElementById("column2");
+            const heading = document.getElementById("heading2");
+            column.style.backgroundColor = "blue";
+            heading.textContent = "Updated!";
+        }
+    </script>
+</body>
+
+</html>
